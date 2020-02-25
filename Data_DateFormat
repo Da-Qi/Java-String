@@ -41,3 +41,26 @@ public class DateUtil {
 		return new SimpleDateFormat(format).parse(s);
 	}
 }
+
+
+import java.text.ParseException;
+import java.util.Date;
+
+public class DateUtilDemo {
+	public static void main(String[] args) throws ParseException {
+		Date d = new Date();
+		//yyyy --mm-dd hh:mm:ss
+		String s = DateUtil.dataToString(d, "yyyy年MM月dd日 HH:mm:ss");
+		System.out.println(s);
+		
+		String s2 = DateUtil.dataToString(d, "yyyy年MM月dd日");
+		System.out.println(s2);
+		
+		String s3 = DateUtil.dataToString(d, "HH:mm:ss");
+		System.out.println(s3);
+		
+		String str = "2014-10-14";
+		Date dd = DateUtil.stringToDate(str, "yyyy-MM-dd");
+		System.out.println(dd);
+	}
+}
