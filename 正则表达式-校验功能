@@ -1,0 +1,65 @@
+package 校验QQ;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * 正则表达式：
+ *
+ */
+public class RegexDemo2 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("请输入一串QQ号码：");
+		String a = scan.nextLine();
+		if (checkQQ(a)) {
+			System.out.println("符合要求");
+		} else {
+			System.out.println("不符合要求");
+		}
+	}
+	
+	public static boolean checkQQ(String qq) {
+		return qq.matches("[1-9][0-9]{4,14}");
+	}
+}
+
+
+
+package 检验邮箱;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * 判断功能：检验邮箱
+ * 
+ * 分析：
+ * 		a.键盘录入邮箱
+ * 		b.定义邮箱的规则
+ * 			1517806580@qq.com
+ * 			liuyi@qq.com
+ * 			linqingxia@126.com
+ * 			fengqingyang@sina.com.cn
+ * 			fqy@itcast.cn
+ * 		c.调用功能，判断即可
+ * 		d.输出结果
+ *
+ */
+public class RegexDemo {
+	public static void main(String[] args) {
+		//键盘输入邮箱
+		Scanner scan = new Scanner(System.in);
+		System.out.println("请输入邮箱：");
+		String email = scan.nextLine();
+		
+		//定义邮箱的规则
+		String regex = "\\w+@\\w{2,6}(\\.\\w{2,3})+";
+		
+		//调用功能
+		boolean flag = email.matches(regex);
+		
+		//输出结果
+		System.out.println(flag);
+	}
+}
